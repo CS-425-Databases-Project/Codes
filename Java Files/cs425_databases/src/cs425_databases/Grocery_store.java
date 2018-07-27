@@ -55,7 +55,7 @@ public class Grocery_store {
 		frmHttpwwwstorecom = new JFrame();
 		frmHttpwwwstorecom.getContentPane().setBackground(Color.BLACK);
 		frmHttpwwwstorecom.setResizable(false);
-		frmHttpwwwstorecom.setTitle("http://www.store.com/home");
+		frmHttpwwwstorecom.setTitle("https://www.store.com/home?user=customer");
 		frmHttpwwwstorecom.setBounds(100, 100, 814, 617);
 		frmHttpwwwstorecom.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmHttpwwwstorecom.getContentPane().setLayout(null);
