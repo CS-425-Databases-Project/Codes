@@ -1,0 +1,47 @@
+
+
+insert into customer values('11111','215.02','Scott','Mitchell','Northbrook','IL','4172 Vine Street','60062'),
+('11112','457.83','Martin','Edwards','Indianapolis','IN','1757 Elk city road','46254'),
+('11113','179.42','Lisa','Morgan','Cicero','IL','3064 Poplar Street','60650'),
+('11114','20.00','Nancy','Parker','Arilington Heights','IL','4598 Kembery Drive','60005'),
+('11115','59.99','Rose','Taylor','South Bend','IN','4926 Sand Fork Road','46601');
+
+
+
+insert into staff values('21111','Susan','Torres','8000.00','Burr Ridge','IL','26 Cecil Street','61257','Marketing manager'),
+('21112','John','Jackson','7000','Oak Brook','IL','1454 Hickman Street','60523','Stock manager');
+
+
+
+
+
+
+insert into product values('31111','0.5','meat','90% lean ground beef'),
+('31112','0.5','meat','100% grass fed new york strip steak'),
+('31113','0.5','meat','AA beef burger'),
+('31114','0.5','meat','audouille pork sausage'),
+('31115','0.5','meat','beef burger'),
+('31116','0.5','meat','beef chuck skirt steak'),
+('31117','0.5','meat','boneless ribeye steak'),
+('31118','0.5','meat','boneless pork butt'),
+('31119','0.5','meat','chicken'),
+
+
+insert into productpricing values('31111','9.99','IL'),
+('31111','9.89','IN'),
+('31112','19.99','IL'),
+('31112','18.99','IN'),
+('31113','8.99','IL'),
+('31113','10.99','IN'),
+('31114','12.99','IL'),
+('31114','10.99','IN'),
+('31115','3.99','IL'),
+('31115','3.89','IN'),
+('31116','4.99','IL'),
+('31116','4.79','IN'),
+('31117','12.99','IL'),
+('31117','14.99','IN'),
+('31118','5.99','IL'),
+('31118','6.99','IN'),
+('31119','8.99','IL'),
+('31119','9.99','IN');
