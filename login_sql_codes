@@ -1,0 +1,31 @@
+create table login (
+username varchar(20),
+password varchar(20) not null,
+role numeric(1,0),
+id numeric(5,0),
+primary key (username)
+);
+
+insert into login values 
+(“cs425”, “databases”, 1, 11111),
+(“clive”, “gomes”, 0, 11112),
+(“jiahao”, “xu”, 0, 11113),
+(“suleyma”, “pizanna”, 0, 11114);
+
+max = select max(id)
+from login
+
+x = select *
+from login
+where username = <username> and password = <password>;
+
+if x is null
+login error
+else{
+customer/staff = select * 
+from customer/staff
+where id = <id>
+}
+
+insert into login values
+(<username>, <password>, 0, max+1)
