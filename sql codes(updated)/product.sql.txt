@@ -60,7 +60,7 @@ create table productpricing(
 productid char(5),
 price numeric(10,2) not null,
 state varchar(20) not null,
-primary key(productid,state)
+primary key(productid,state),
 foreign key(productid) references product(id)
 )
 ;
