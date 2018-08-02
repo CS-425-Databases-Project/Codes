@@ -13,7 +13,7 @@ insert into login values
 (“suleyma”, “pizanna”, 0, 11114);
 
 max = select max(id)
-from login
+from login;
 
 x = select *
 from login
