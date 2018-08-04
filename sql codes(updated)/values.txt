@@ -12,10 +12,6 @@ insert into staff values('21111','Susan','Torres','8000.00','Burr Ridge','IL','2
 ('21112','John','Jackson','7000','Oak Brook','IL','1454 Hickman Street','60523','Stock manager');
 
 
-
-
-
-
 insert into product values('31111','0.5','meat','90% lean ground beef'),
 ('31112','0.5','meat','100% grass fed new york strip steak'),
 ('31113','0.5','meat','AA beef burger'),
@@ -228,3 +224,10 @@ insert into productpricing values('34111', 5.99,'IN'),
 ('35136',6.70, 'IN'),
 ('35137',3.99, 'IL'),
 ('35138',2.45, 'IL');
+
+
+
+insert into warehouse values ('IL201', 'Chicago', 'IL', 'Damen', 60622, 23000.89),
+('PO111', 'Peoria', 'IL','Washington', 61611, 443459.56), 
+('Np548', 'Orland Park', 'IL','159th', 60462, 658880.89),
+('Mr786', 'Meriville', 'IN','79th', 46410, 14787.35);
