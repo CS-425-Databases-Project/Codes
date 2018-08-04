@@ -2,7 +2,7 @@
 // to the way it is to be used in the application
 
 
-public Object [][] getProductData() {
+public Object [][] getProductData(ResultSet rs) {
   // Convert the data received from sql into this format
   
 		num_items = ? // Find out number of items and place it in this variable (Don't create a new variable otherwise it will overshadow the one in the program)
