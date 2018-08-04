@@ -30,12 +30,3 @@ where id = <id>
 insert into login values
 (<username>, <password>, 0, max+1)
 
-with a(id, price) as (select pid, price
-                      from productpricing
-                      where pid = <pid>),
-      b(id, qty) as (select pid, qty
-                     from cart
-                     where pid = <pid>)
- select sum(*)
- from (select price*qty
-       from a join b);
