@@ -229,5 +229,5 @@ insert into productpricing values('34111', 5.99,'IN'),
 
 insert into warehouse values ('IL201', 'Chicago', 'IL', 'Damen', 60622, 23000.89),
 ('PO111', 'Peoria', 'IL','Washington', 61611, 443459.56), 
-('Np548', 'Orland Park', 'IL','159th', 60462, 658880.89),
-('Mr786', 'Meriville', 'IN','79th', 46410, 14787.35);
+('NP548', 'Orland Park', 'IL','159th', 60462, 658880.89),
+('MR786', 'Meriville', 'IN','79th', 46410, 14787.35);
