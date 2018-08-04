@@ -1,1 +1,21 @@
+// Implement this function in java to convert the data received from the database 
+// to the way it is to be used in the application
 
+
+public void getProductData() {
+  // Convert the data received from sql into this format
+  
+		num_items = ? // Find out number of items and place it in this variable (Don't create a new variable otherwise it will overshadow the one in the program)
+  
+		Object [][] data = { 
+    // For now leave the first attribute blank since we have not yet added images to the database
+    //Make the last three values these for all items
+			{"", String name, String size + "cu. ft.", String "$" + price, "See More", "0", "+"}, 
+			{"", String name, String size + "cu. ft.", String "$" + price, "See More", "0", "+"},
+			{"", String name, String size + "cu. ft.", String "$" + price, "See More", "0", "+"}
+			...
+		};
+    
+    return data;
+    
+	}
