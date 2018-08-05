@@ -104,7 +104,7 @@ foreign key(cnumber,customerid) references creditcard(cnumber,customerid)
 create table cart(
 customerid char(5) not null,
 pid char(5) not null,
-num int not null,
+num_items int not null,
 primary key(pid,customerid),
 foreign key(pid) references product(id),
 foreign key(customerid) references customer(id)
