@@ -2,7 +2,199 @@
 		
 	// Functions to Implement
 	
-	private void displayCart() {
+	package cs425_databases;
+
+import java.awt.Font;
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JEditorPane;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Date;
+
+public class CartMenu {
+
+	private JFrame fCart;
+	
+	private double subtotal = 0.0;
+	private double deliveryfee = 0.0;
+	private double tax = 0.0;
+	private double total = subtotal + deliveryfee + tax; 
+	private int num_items = 0;
+	
+	private Object cart;
+	private Object checkoutInfo;
+	
+	private JTextArea tMain;
+	
+
+	private String url = "jdbc:postgresql://localhost/groceryStore";
+	private String user = "postgres";
+	private   String password = "Hawkiit";
+	private String cid;
+	private String customer, pid;
+
+	private String userInfo;
+	
+	
+	/**
+	 * Create the application.
+	 */
+	public CartMenu(String userInfo,Object cart) {//cartMenu constructor
+		this.userInfo=userInfo;
+		this.cart = cart;
+		initialize();
+	}
+
+	public CartMenu(Object cart2) {
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		fCart = new JFrame();
+		fCart.setTitle("https://www.store.com/cart?status=default");
+		fCart.getContentPane().setBackground(Color.DARK_GRAY);
+		fCart.setBackground(Color.BLACK);
+		fCart.setBounds(100, 100, 898, 402);
+		fCart.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		fCart.getContentPane().setLayout(null);
+		
+		JLabel top = new JLabel("    Your Cart");
+		top.setForeground(Color.WHITE);
+		top.setFont(new Font("Apple Braille", Font.PLAIN, 13));
+		Image Images7=new ImageIcon (this.getClass().getResource("/shopping-cart-icon.png")).getImage();
+		top.setIcon(new ImageIcon(Images7));
+		top.setBounds(688, 20, 139, 48);
+		fCart.getContentPane().add(top, BorderLayout.WEST);
+		
+		JTextField txtProducts = new JTextField();
+		txtProducts.setForeground(new Color(50, 205, 50));
+		txtProducts.setBackground(Color.WHITE);
+		txtProducts.setText("                           Product(s)");
+		txtProducts.setBounds(16, 18, 309, 26);
+		txtProducts.setEditable(false);
+		fCart.getContentPane().add(txtProducts);
+		txtProducts.setColumns(10);
+		
+		JTextField txtQty = new JTextField();
+		txtQty.setForeground(new Color(50, 205, 50));
+		txtQty.setBackground(Color.WHITE);
+		txtQty.setText("  Qty.");
+		txtQty.setBounds(375, 18, 52, 26);
+		txtQty.setEditable(false);
+		fCart.getContentPane().add(txtQty);
+		txtQty.setColumns(10);
+		
+		JTextField txtPrice = new JTextField();
+		txtPrice.setForeground(new Color(50, 205, 50));
+		txtPrice.setText("   Price");
+		txtPrice.setBackground(Color.WHITE);
+		txtPrice.setBounds(467, 18, 62, 26);
+		fCart.getContentPane().add(txtPrice);
+		txtPrice.setColumns(10);
+		txtPrice.setEditable(false);
+		
+		JTextField txtRemove = new JTextField();
+		txtRemove.setForeground(new Color(50, 205, 50));
+		txtRemove.setText(" Remove");
+		txtRemove.setBackground(Color.WHITE);
+		txtRemove.setBounds(567, 18, 70, 26);
+		fCart.getContentPane().add(txtRemove);
+		txtRemove.setColumns(10);
+		txtRemove.setEditable(false);
+		
+		JButton bUpdate = new JButton("Update Cart");
+		bUpdate.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				updatecart();
+			}
+		});
+		bUpdate.setForeground(new Color(30, 144, 255));
+		bUpdate.setBackground(new Color(255, 255, 255));
+		bUpdate.setBounds(705, 90, 117, 29);
+		fCart.getContentPane().add(bUpdate);
+		
+		JButton bContinue = new JButton("Continue Shopping");
+		bContinue.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				continueShopping();
+			}
+		});
+		bContinue.setForeground(new Color(30, 144, 255));
+		bContinue.setBackground(new Color(30, 144, 255));
+		bContinue.setBounds(687, 130, 156, 29);
+		fCart.getContentPane().add(bContinue);
+		
+		JButton bCheckout = new JButton("Checkout");
+		bCheckout.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				checkout();
+			}
+
+			private void checkout() {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		bCheckout.setForeground(new Color(255, 0, 0));
+		bCheckout.setBackground(Color.WHITE);
+		bCheckout.setBounds(705, 325, 117, 29);
+		fCart.getContentPane().add(bCheckout);
+		
+		JEditorPane dtrpnSubtotalDelivery = new JEditorPane();
+		dtrpnSubtotalDelivery.setForeground(new Color(0, 0, 128));
+		dtrpnSubtotalDelivery.setFont(new Font("Lucida Bright", Font.PLAIN, 13));
+		dtrpnSubtotalDelivery.setBackground(new Color(192, 192, 192));
+		dtrpnSubtotalDelivery.setText("\n Subtotal                           $" + subtotal + "\n\n Delivery Fee                     $" + deliveryfee + "\n\n Tax                                   $" + tax + "\n\n Total                                $" + (double)((int)(total*100))/100);
+		dtrpnSubtotalDelivery.setBounds(652, 179, 227, 181);
+		fCart.getContentPane().add(dtrpnSubtotalDelivery);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(195, 186, -54, 37);
+		fCart.getContentPane().add(scrollPane);
+		
+		JScrollPane pMain = new JScrollPane();
+		pMain.setBounds(19, 56, 615, 304);
+		fCart.getContentPane().add(pMain);
+		
+		tMain = new JTextArea();
+		pMain.setViewportView(tMain);
+		
+		displayCart(cid);
+		
+		fCart.setVisible(true);
+		
+	}
+		
+	// Functions to Implement
+	
+	private void _createCheckoutInfo() {
+		
+	}
+	
+	//
+	private void displayCart(String cid2) {
 
 		tMain.setText("Display Cart Items\n");
 
@@ -29,11 +221,161 @@
 
 	        		+ " where customerid=?");      
 
-	        stmt.setString(1,cid);
-
+	        stmt.setString(1,userInfo);
 	        ResultSet rs=stmt.executeQuery();
-
 	        getProductData(rs);
+	        
+	       /* while(rs.next()){
+
+	        	String result="";
+
+	        	String pName = rs.getString("name");
+
+	        	int pQty = rs.getInt("qty");
+
+	        	Double price = rs.getDouble("price");
+
+	        	result = result + pName + Integer.toString(pQty) + Double.toString(price);
+
+	        	tMain.append(result + "\n");
+
+	        	System.out.println(result);
+
+	        }*/
+	}catch(Exception e) {
+
+			e.printStackTrace();
+
+		}
+
+	}
+	
+public Object[][] getProductData(ResultSet rs){
+
+	num_items = 1;
+
+	Object[][] data = {};
+
+	int count = 0;
+
+	try {
+
+		while(rs.next()) {
+
+			Object[] itemDetails= {};
+
+			itemDetails[0] = "";
+
+			itemDetails[1] = rs.getString("name");
+
+			itemDetails[2] = rs.getString("size")+ "cu. ft.";
+
+			itemDetails[3] = "$" + Double.toString(rs.getDouble("price"));
+
+			itemDetails[4] = "See More";
+
+			itemDetails[5] = "0";
+
+			itemDetails[6] = "+";
+			data[count] = itemDetails;
+			count++;
+			num_items++;
+
+		}
+
+	} 
+	catch (SQLException e) {
+
+		// TODO Auto-generated catch block
+
+		e.printStackTrace();
+
+		}
+	return data;
+	}
+//delete
+private void deleteproduct(String pid){
+
+	Connection conn = null;
+
+	try {
+
+		conn = DriverManager.getConnection(url, user, password);
+
+        System.out.println("Connection to database established.");
+
+        PreparedStatement stmt;                
+
+        stmt = conn.prepareStatement( " delete from Cart"
+
+        		+ " where customerid=? and p.pid = ?");      
+
+        stmt.setString(1,userInfo);
+
+        stmt.setString(2, pid);
+
+        ResultSet rs=stmt.executeQuery();
+
+        getProductData(rs);
+
+        displayCart(pid);//add
+
+        
+
+	}catch(Exception e) {
+
+		e.printStackTrace();
+
+	}
+}
+
+
+private void updatecart(){
+Connection conn = null;
+
+try {
+
+	conn = DriverManager.getConnection(url, user, password);
+
+    System.out.println("Connection to database established.");
+
+    PreparedStatement stmt;                
+
+    stmt = conn.prepareStatement( "update cart "
+
+    		+ " set num_items=?"
+    		
+    		+"where customerid=? and pid=? and num_item=? ");      
+
+    stmt.setString(1,userInfo);
+
+    stmt.setString(2, pid);
+
+    ResultSet rs=stmt.executeQuery();
+
+    getProductData(rs);
+
+    displayCart(pid);
+
+    
+
+}catch(Exception e) {
+
+	e.printStackTrace();
+
+}
+}
+
+
+private void checkout(){
+	}
+
+
+private void continueShopping() {
+	
+ }
+}
+
 
 //function to calculate total amount
 
