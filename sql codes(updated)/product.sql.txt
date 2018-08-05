@@ -7,6 +7,8 @@ dcity varchar(20) not null,
 dstate varchar(20) not null,
 dstreet varchar(50) not null,
 dzipcode numeric(5,0) not null,
+username varchar(20) ,
+upassword varchar(40) ,
 primary key (id));
 
 create table creditcard(
@@ -32,6 +34,8 @@ sstate varchar(20) not null,
 sstreet varchar(50) not null,
 szipcode numeric(5,0) not null,
 title varchar(20) not null,
+username varchar(20) ,
+upassword varchar(40) ,
 primary key(id));
 
 create table product(
