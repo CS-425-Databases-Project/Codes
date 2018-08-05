@@ -52,3 +52,32 @@ public Object [][] getCartData() {
 			    
 		return data;    
 	}
+	
+	
+	
+	
+	// sql code to get the existing card numbers of all credit for the given customer 
+	// Store them in the array below
+	String cardNumbers [] = {}; 
+	
+	
+	
+	// sql code to get address associated with cardNumber and put it in variables
+	// if address is null, then make all those variables ""
+	
+	
+	
+	// sql code to count number of items in cart and set the variable count
+	
+	
+	// sql code to create a new card using the given inputs (default address attributes = null)
+	
+	
+	// sql code to update the address attributes in the database using the information in the variables
+	
+	
+	
+	// sql code to delete entire cart in the database
+	
+	
+	// sql code to add new order to database
