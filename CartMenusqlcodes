@@ -1,7 +1,5 @@
 
 		
-	// Functions to Implement
-	
 	package cs425_databases;
 
 import java.awt.Font;
@@ -374,47 +372,56 @@ private void checkout(){
 private void continueShopping() {
 	
  }
-}
 
+private void calculatetotal(){
+	Connection conn = null;
 
-//function to calculate total amount
+	try {
 
+		conn = DriverManager.getConnection(url, user, password);
 
-with a(id, price) as (select pid, price
-                      from productpricing
-                      where pid = ? and customerid=?),
-      b(id, qty) as (select pid, qty
-                     from cart
-                     where pid = ? and customerid =?)
- select sum(*)
- from (select price*qty
-       from a join b);
-	    	        while(rs.next()){
+	    System.out.println("Connection to database established.");
 
-	        	String result="";
+	    PreparedStatement stmt;
+	    stmt = conn.prepareStatement("with a(id, price) as (select pid, price"
+                     + "from productpricing"
+                     +" where pid = ? and customerid=?)"
+      +"b(id, qty) as (select pid, qty"
+                    +" from cart"
+                     +" where pid = ? and customerid =?)"
+                    + "select sum(*)"
+                     +" from (select price*qty"
+       + "from a join b)");
+	    
+	    ResultSet rs = null;
+		while(rs.next()){
 
-	        	String pName = rs.getString("name");
+        	String result="";
 
-	        	int pQty = rs.getInt("qty");
+        	String pName = rs.getString("name");
 
-	        	Double price = rs.getDouble("price");
+        	int pQty = rs.getInt("qty");
 
-	        	result = result + pName + Integer.toString(pQty) + Double.toString(price);
+        	Double price = rs.getDouble("price");
 
-	        	tMain.append(result);
+        	result = result + pName + Integer.toString(pQty) + Double.toString(price);
 
-	        	System.out.println(result);
+        	tMain.append(result);
 
-	       }
+        	System.out.println(result);
+        	
 
-		}catch(Exception e) {
+       }
+		double subtotal=8.9;
+		double tax=(subtotal*110/100);
+		double shippingfee=(subtotal*105/100);
+	}catch(Exception e) {
 
-			e.printStackTrace();
-
-		}
+		e.printStackTrace();
 
 	}
 
+}
+ 		
+}
 
-	
-	
