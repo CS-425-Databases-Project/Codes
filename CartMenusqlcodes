@@ -176,13 +176,16 @@ public class CartMenu {
 		
 	}
 	
-	private void displayCart(String cid) {
+	private void displayCart() {
 
 		tMain.setText("Display Cart Items");
 
 		Connection conn = null;
 
 		try {
+
+			
+
 			conn = DriverManager.getConnection(url, user, password);
 
 	        System.out.println("Connection to database established.");
@@ -207,7 +210,12 @@ public class CartMenu {
 
 	        ResultSet rs=stmt.executeQuery();
 
+	        getProductData(rs);
+
 	        String result="";
+
+	        
+
 	        while(rs.next()){
 
 	        	String pName = rs.getString("name");
@@ -221,10 +229,10 @@ public class CartMenu {
 	        	System.out.println(result);
 
 	        }
-
 		}catch(Exception e) {
 
 			e.printStackTrace();
 
 		}
+
 	}
