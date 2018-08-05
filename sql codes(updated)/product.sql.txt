@@ -39,7 +39,7 @@ id char(5),
 
 size numeric(10,2) not null,
 category varchar(10) not null,
-pname varchar(40) not null,
+pname varchar(200) not null,
 
 primary key(id));
 
