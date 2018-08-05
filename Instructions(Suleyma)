@@ -19,3 +19,36 @@ public Object [][] getProductData(ResultSet rs) {
     return data;
     
 	}
+
+
+public Object [][] getOfferData() {
+		// Do this similar to the previous one except for these conditions
+		// There should always be only 8 offers
+		// Last attribute should always be "+"  
+			  
+		Object [][] data = { 
+			{_getImage("oreo.jpeg"), "$3.99", "+"},
+			{_getImage("oreo.jpeg"), "$3.99", "+"},
+			{_getImage("oreo.jpeg"), "$3.99", "+"},
+			{_getImage("oreo.jpeg"), "$3.99", "+"},
+			{_getImage("oreo.jpeg"), "$3.99", "+"},
+			{_getImage("oreo.jpeg"), "$3.99", "+"},
+			{_getImage("oreo.jpeg"), "$3.99", "+"},
+			{_getImage("oreo.jpeg"), "$3.99", "+"}
+		};
+			    
+		return data;    
+	}
+	
+public Object [][] getCartData() { 
+
+		// Do this similar to the first one
+			  
+		num_items = ?; 
+		
+		Object [][] data = { 
+			{_getImage("oreo.jpeg"), "Oreo Milk Cookies", "$3.99", "3"}
+		};
+			    
+		return data;    
+	}
