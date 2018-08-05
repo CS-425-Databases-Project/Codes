@@ -1,0 +1,26 @@
+CREATE TABLE images (imgname text, img bytea);
+To insert an image, you would use:
+
+File file = new File("myimage.gif");
+FileInputStream fis = new FileInputStream(file);
+PreparedStatement ps = conn.prepareStatement("INSERT INTO images VALUES (?, ?)");
+ps.setString(1, file.getName());
+ps.setBinaryStream(2, fis, file.length());
+ps.executeUpdate();
+ps.close();
+fis.close();
+Here, setBinaryStream() transfers a set number of bytes from a stream into the column of type bytea. This also could have been done using the setBytes() method if the contents of the image was already in a byte[].
+
+Retrieving an image is even easier. (We use PreparedStatement here, but the Statement class can equally be used.)
+
+PreparedStatement ps = con.prepareStatement("SELECT img FROM images WHERE imgname = ?");
+ps.setString(1, "myimage.gif");
+ResultSet rs = ps.executeQuery();
+if (rs != null) {
+    while (rs.next()) {
+        byte[] imgBytes = rs.getBytes(1);
+        // use the data in some way here
+    }
+    rs.close();
+}
+ps.close();
