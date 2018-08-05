@@ -172,20 +172,13 @@ public class CartMenu {
 		
 	// Functions to Implement
 	
-	private void _createCheckoutInfo() {
-		
-	}
-	
 	private void displayCart() {
 
-		tMain.setText("Display Cart Items");
+		tMain.setText("Display Cart Items\n");
 
 		Connection conn = null;
 
 		try {
-
-			
-
 			conn = DriverManager.getConnection(url, user, password);
 
 	        System.out.println("Connection to database established.");
@@ -212,11 +205,13 @@ public class CartMenu {
 
 	        getProductData(rs);
 
-	        String result="";
+	        
 
 	        
 
 	        while(rs.next()){
+
+	        	String result="";
 
 	        	String pName = rs.getString("name");
 
@@ -224,11 +219,20 @@ public class CartMenu {
 
 	        	Double price = rs.getDouble("price");
 
-	        	result = result + pName + Integer.toString(pQty) + Double.toString(price) +"\n";
+	        	result = result + pName + Integer.toString(pQty) + Double.toString(price);
+
+	        	tMain.append(result);
 
 	        	System.out.println(result);
 
 	        }
+
+	        
+
+	        
+
+	        
+
 		}catch(Exception e) {
 
 			e.printStackTrace();
@@ -236,3 +240,7 @@ public class CartMenu {
 		}
 
 	}
+
+
+	
+	
