@@ -115,6 +115,6 @@ create table type(
 pid varchar(20) not null,
 AdditionalInfo varchar (100) not null,
 primary key (pid,AdditionalInfo),
-foreign key (pid) references product(pid));
+foreign key (pid) references product(id));
 
 
