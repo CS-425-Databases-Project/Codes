@@ -1,15 +1,13 @@
+insert into login values('11111','sm11111','11111','customer'),('11112','me22222','22222','customer'),('11113','lm33333','33333','customer'),('21111','st44444','44444','staff'),('21112','jj55555','55555','staff');
 
-
-  insert into customer values('11111','215.02','Scott','Mitchell','Northbrook','IL','4172 Vine Street','60062','sm11111','sm11111'),
-('11112','457.83','Martin','Edwards','Indianapolis','IN','1757 Elk city road','46254','me22222','me22222'),
-('11113','179.42','Lisa','Morgan','Cicero','IL','3064 Poplar Street','60650','lm33333','lm33333'),
-('11114','20.00','Nancy','Parker','Arilington Heights','IL','4598 Kembery Drive','60005','np44444','np44444'),
-('11115','59.99','Rose','Taylor','South Bend','IN','4926 Sand Fork Road','46601','ts55555','ts55555');
+  insert into customer values('11111','215.02','Scott','Mitchell','Northbrook','IL','4172 Vine Street','60062'),
+('11112','457.83','Martin','Edwards','Indianapolis','IN','1757 Elk city road','46254'),
+('11113','179.42','Lisa','Morgan','Cicero','IL','3064 Poplar Street','60650');
 
 
 
-insert into staff values('21111','Susan','Torres','8000.00','Burr Ridge','IL','26 Cecil Street','61257','Marketing manager','st66666','st66666'),
-('21112','John','Jackson','7000','Oak Brook','IL','1454 Hickman Street','60523','Stock manager','jj77777','jj77777');
+insert into staff values('21111','Susan','Torres','8000.00','Burr Ridge','IL','26 Cecil Street','61257','Marketing manager'),
+('21112','John','Jackson','7000','Oak Brook','IL','1454 Hickman Street','60523','Stock manager');
 
 
 insert into product values('31111','0.5','meat','90% lean ground beef'),
