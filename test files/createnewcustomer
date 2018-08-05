@@ -1,0 +1,63 @@
+	private void createnewcustomer(String lname,String fname,String username,String password)
+	{ 
+		
+		 String url = "jdbc:postgresql://localhost/cs425_project";
+		 String userid = "postgres";
+		   String userpassword = "88378821";
+		
+		Connection conn = null;
+    try
+    {
+	 conn = DriverManager.getConnection(url, userid, userpassword);
+        System.out.println("Connection to database established.");
+    }
+    catch (SQLException e)
+    {
+        System.err.println("SQL exception: " + e.getMessage());
+        System.err.println("SQL state: " + e.getSQLState());
+        System.err.println("Error code: " + e.getErrorCode());
+    }
+
+    if (conn != null)
+    {
+        try
+        {
+        	
+
+ PreparedStatement stmt,stmt2;                
+ stmt = conn.prepareStatement( "select max(id) from customer");
+ ResultSet rs=stmt.executeQuery();
+ String maxid=rs.getString(1);
+
+ String newid =  (Integer.parseInt(maxid)+1)+"";
+ stmt2=conn.prepareStatement("insert into customer(id,lname,fname,username,upassword) values (?,?,?,?,?)");
+ stmt2.setString(1, newid);
+ stmt2.setString(2, lname);
+ stmt2.setString(3, fname);
+ stmt2.setString(4, username);
+ 
+ stmt2.setString(5, password);
+ 
+ ResultSet r2=stmt2.executeQuery();
+stmt2.executeUpdate();
+ 
+ 
+ 
+ 
+
+
+
+	
+
+System.out.println("Database connection closed.");
+        }
+        catch (SQLException e)
+        {
+            System.err.println("SQL exception: " + e.getMessage());
+            System.err.println("SQL state: " + e.getSQLState());
+            System.err.println("Error code: " + e.getErrorCode());
+        }
+
+
+    }
+    }
