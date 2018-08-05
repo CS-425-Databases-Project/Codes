@@ -98,7 +98,6 @@ foreign key(cnumber,customerid) references creditcard(cnumber,customerid)
 );
 
 create table cart(
-id char(20),
 customerid char(5) not null,
 pid char(5) not null,
 num int not null,
