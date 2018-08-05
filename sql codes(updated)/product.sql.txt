@@ -11,14 +11,14 @@ primary key (id));
 
 create table creditcard(
 customerid char(5),
-pcity varchar(20) not null,
-pstate varchar(20) not null,
-pstreet varchar(50) not null,
-pzipcode numeric(5,0) not null,
-cnumber numeric(16,0) not null,
-ceyear numeric(4,0) not null,
-cemonth numeric(2,0) not null,
-cvs numeric(3,0) not null,
+pcity varchar(20) ,
+pstate varchar(20) ,
+pstreet varchar(50) ,
+pzipcode numeric(5,0) ,
+cnumber numeric(16,0) ,
+ceyear numeric(4,0) ,
+cemonth numeric(2,0) ,
+cvs numeric(3,0) ,
 primary key(customerid,cnumber),
 foreign key(customerid) references customer(id));
 
@@ -98,6 +98,7 @@ foreign key(cnumber,customerid) references creditcard(cnumber,customerid)
 );
 
 create table cart(
+id char(5) not null,
 customerid char(5) not null,
 pid char(5) not null,
 num int not null,
@@ -111,9 +112,9 @@ foreign key(customerid) references customer(id)
 
 
 create table type(
-pname varchar(20) not null,
+pid varchar(20) not null,
 AdditionalInfo varchar (100) not null,
-primary key (pname,AdditionalInfo),
-foreign key (pname) references product(pname));
+primary key (pid,AdditionalInfo),
+foreign key (pid) references product(pid));
 
 
