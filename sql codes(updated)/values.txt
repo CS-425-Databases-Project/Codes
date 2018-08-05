@@ -132,7 +132,7 @@ insert into productpricing values('31111','9.99','IL'),
 ('31149','9.99','IL'),
 ('31149','9.99','IN');
 
-insert into products values 
+insert into product values 
 ('32001', 0.75,'snacks', 'oreo mega stuf chocolate sandwich cookies'),
 ('32002', 1.0,'snacks', 'pringles sour cream & onion (3 count)'),
 ('32003', 2.25,'snacks', 'doritos nacho cheese flavor (40 count)'),
@@ -140,7 +140,7 @@ insert into products values
 ('32005', 1.75,'snacks', 'planters peanuts variety pack (salted peanuts, honey roasted peanuts, salted cashews)'),
 ('32006',1.0,'snacks', 'nature valley crunchy granola bars (oats ’n honey)'),
 ('32007',2.0,'snacks', 'mars chocolate singles variety pack (snickers, twix, 3 musketeers, milky way) - 18 count'),
-('32008','snacks', 'kelloggs protein meal bars choolate chip flavor'),
+('32008',2.5,'snacks', 'kelloggs protein meal bars choolate chip flavor'),
 ('32009',1.75,'snacks', 'fiber one brownies chocolate fudge (40 count)'),
 ('32010',2.25,'snacks', 'lays potato chips variety pack - 40 count'),
 ('32011',1.75,'snacks', 'hersheys milk chocolate bars (pack of 6)'),
