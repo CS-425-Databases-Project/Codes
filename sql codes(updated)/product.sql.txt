@@ -80,8 +80,8 @@ wid char(5) not null,
 pid char(5) not null,
 numofitem int not null,
 primary key(wid,pid),
-foreign key(pid) references warehouse(id),
-foreign key(wid) references product(id));
+foreign key(wid) references warehouse(id),
+foreign key(pid) references product(id));
 
 
 create table orders(
@@ -91,7 +91,7 @@ pid char(5) not null,
 num int not null,
 cnumber numeric(16,0) not null,
 status varchar(20) not null,
-issuedate date not null,
+issuedate varchar(30) not null,
 primary key(id,pid,cnumber,customerid),
 foreign key(pid) references product(id),
 foreign key(cnumber,customerid) references creditcard(cnumber,customerid)
