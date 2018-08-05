@@ -1,1 +1,14 @@
+After you have all the data, try to complete the following...
 
+
+1) In the customers table, keep only 3 customers, we don't need too many
+2) Similarly, keep only 1 or 2 staff members
+3) Add username and password attributes to each of the customers and staff attributes (make them simple enough so that at least you remember them)
+4) Create an function(sql/java) to check whether the entered username and password mathches any of the ones in the customer or staff table
+5) If it does, return all the information attributes of that person in a Result Set. Also set the local variable user = 1 for customer and user = 2 for staff (variable is already defined in the class)
+6) If it does not match anyone, set user = 0
+7) Write sql code to add a new customer to the database.
+8) In the products table, besides what we have, we need to add 2 more attributes. Those are "image" and "nutrition." So see if you can think about how we should do those.
+
+That's all I can think of for now.. If I add more, I'll do so below this line and send you a message.
+_______________________________________________
