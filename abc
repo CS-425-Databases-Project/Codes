@@ -79,7 +79,7 @@ check (qty >= 0)
 );
 
 create table orders(
-oid char(5) not null, -- 6 digit number starting with 9
+oid char(6) not null, -- 6 digit number starting with 9
 cid char(5) not null,
 pid char(5) not null,
 qty int not null default 0,
