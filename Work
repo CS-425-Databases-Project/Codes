@@ -1,1 +1,13 @@
 
+Create a folder for all 110 product images
+
+Create Text File 1:
+1) Include statements for the 110 products (all pids should be continuos i.e. from 30001 to 30110)
+2) Include statements for the prices of all those products, and each product 
+   should have 2 prices, one for each state. Also, don't make all the prices same or too weird.
+   
+Create Text File 2:
+1) Include statements for the 5 suppliers with appropriate addresses and names.(id starts at 50001 and make sure both states have seller)
+2) For first 5 products (30001 to 30005), write 2 insert statements for adding price to sells table using different combinations of sellers.
+3) Include statements for 5 warehouses with appropriate addresses. (Make sure both states have warehouses)
+4) For first 5 products (30001 to 30005), write 2 insert statements for adding qty to stock table using different combinations of warehouses.
