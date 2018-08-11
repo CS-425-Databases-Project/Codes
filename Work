@@ -11,7 +11,7 @@ Create Text File 2:
 2) For first 5 products (30001 to 30005), write 2 insert statements for adding price to sells table using different combinations of sellers.
 3) Include statements for 5 warehouses with appropriate addresses. (Make sure both states have warehouses)
 4) For first 5 products (30001 to 30005), write 2 insert statements for adding qty to stock table using different combinations of warehouses.
-
+5) For the stock statements, make the order pid, wid, qty
 
 - No insert statements for cart and orders
 
