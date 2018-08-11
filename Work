@@ -11,3 +11,12 @@ Create Text File 2:
 2) For first 5 products (30001 to 30005), write 2 insert statements for adding price to sells table using different combinations of sellers.
 3) Include statements for 5 warehouses with appropriate addresses. (Make sure both states have warehouses)
 4) For first 5 products (30001 to 30005), write 2 insert statements for adding qty to stock table using different combinations of warehouses.
+
+
+- No insert statements for cart and orders
+
+Create Text File 3:
+1) Insert statement for 1 customer (id 10001) with appropriate name and 0.0 balance
+2) Insert statement for the above customer in cinfo table with appropriate details
+3) Insert statement for 1 staff (id 20001) with appropriate name and address
+4) Insert statement for both of the above in login table with appropriate username and password
