@@ -1,3 +1,4 @@
+-- INSERT STATEMENTS
 
 --products
 insert into product(pid,size,category,pname,info,image) values('30020','0.5','meats','90% lean ground beef','100 cal per serving','leangroundbeef.jpg'),
@@ -132,8 +133,6 @@ insert into product(pid,size,category,pname,info,image) values
 ('30124',1.0,'frozen', 'talenti gelato caramel cookie crunch (one pint)','150 cal per serving','38.jpg'),
 ('30125',2.0,'frozen', 'digiorno original rising crust pepperoni (made with pork, chicken & beef)','100 cal per serving','39.jpg'),
 ('30126',1.0,'frozen', 'ben & jerryís ice cream chocolate fudge brownie (one pint)','250 cal per serving','40.jpg');
-
-
 
 
 --product price
@@ -391,17 +390,21 @@ insert into pprice(pid,price,state) values
 ('30124',3.95, 'IL'),
 ('30125',1.42, 'IL'),
 ('30126',6.75, 'IL'),
-('30127',3.59, 'IN')
-;
+('30127',3.59, 'IN');
+
+
 --supplier
-insert into supplier values('50001','John’,’Smith','200 South king drive','chicago','IL','60616'),
+insert into supplier values
+('50001','John’,’Smith','200 South king drive','chicago','IL','60616'),
 ('50002','Michael','Johnson','102 Albion place','Rockport','IL','62370'),
 ('50003','David','Martinez','390 Matthews Street','Sterling','IL','61081'),
 ('50004','Robert','James','4442 Birch Street','Greenwood','IN','46142'),
 ('50005','James','Wade','3571 Sand Fork Road','Millersburg','IN','46543');
 
+
 --sells
-insert into sells values('50001','30001','5.00'),
+insert into sells values
+('50001','30001','5.00'),
 ('50002','30001','4.85'),
 ('50003','30002','6.29'),
 ('50004','30002','6.00'),
@@ -411,6 +414,7 @@ insert into sells values('50001','30001','5.00'),
 ('50001','30004','7.68'),
 ('50005','30005','2.19'),
 ('50004','30005','2.11');
+
 
 --warehouse
 insert into warehouse values 
@@ -422,7 +426,8 @@ insert into warehouse values
 
 
 --stock
-insert into stock values('30001','IL001',2511),
+insert into stock values
+('30001','IL001',2511),
 ('30001','IN001',1021),
 ('30002','IL002',3112),
 ('30002','IN001',512),
@@ -433,9 +438,9 @@ insert into stock values('30001','IL001',2511),
 ('30005','IL001',322),
 ('30005','IN002',251);
 
---customer and staff data
+--
+customer and staff data
 insert into customer values ('10001', 'Joe', 'Elston', 0.0);
-
 insert into staff values ('20001', 'Mary', 'Jones', '3922 Matthews Street', 'Grand Detour', 'IN', '46304', 4300, 'sales');
 
 insert into users values ('10001', 'joee', 'el');
