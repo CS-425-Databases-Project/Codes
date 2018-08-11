@@ -1,5 +1,5 @@
 
-
+--products
 insert into product(pid,size,category,pname,info,image) values('30020','0.5','meats','90% lean ground beef','100 cal per serving','leangroundbeef.jpg'),
 ('30001','0.5','meats','100% grass fed new york strip steak','90 cal per serving','grassfednewyorkstripsteak.jpg'),
 ('30002','0.5','meats','AA beef burger','80 cal per serving','allamericanbeefburger.jpg'),
@@ -41,7 +41,6 @@ insert into product(pid,size,category,pname,info,image) values('30020','0.5','me
 ('30038','0.1','fruits','watermelon','30 cal per serving','watermelon.jpg');
 
 insert into product(pid,size,category,pname,info,image) values
-
 ('30039', 1, 'fruits', 'artichoke', '30 calories per serving','Artichoke.png'),
 ('30040', 1, 'fruits', 'avocado','60 calories per serving','avocado.png'),
 ('30041', 1, 'fruits', 'beets', '10 calories per serving','Beets.png'),
@@ -70,8 +69,6 @@ insert into product(pid,size,category,pname,info,image) values
 ('30064', 1.0, 'fruits', 'yellow onion','20 calories per serving', 'yellowOnion.png'),
 ('30065', 2.0, 'fruits', 'yellow squash', '30 calories per serving','yellowSquash.png'),
 ('30066', 1.0, 'fruits', 'zucchini squash', '65 calories per serving','ZucchiniSquash.png'),
-
-
 ('30087', 32.0, 'beverages','almondmilk','80 calories per serving','almondmilk.png' ),
 ('30068', 32.0, 'beverages', 'apple juice','60 calories per serving','applejuice.png' ),
 ('30069', 32.0, 'beverages', 'brewed tea','80 calories per serving','brewedtea.png'),
@@ -139,14 +136,7 @@ insert into product(pid,size,category,pname,info,image) values
 
 
 
-
-
-
-
-
-
-
-
+--product price
 insert into pprice(pid,price,state) values
 ('30001','9.89','IN'),
 ('30001','9.99','IL'),
@@ -228,8 +218,6 @@ insert into pprice(pid,price,state) values
 ('30039','3.30','IN'),
 ('30040','3.69','IL'),
 ('30040','3.59','IN'),
-
-
 ('30041', 3.99,'IL'),
 ('30042', 4.69,'IL'),
 ('30043', 20.99,'IL'),
@@ -315,23 +303,8 @@ insert into pprice(pid,price,state) values
 ('30123',6.67, 'IL'),
 ('30124',3.90, 'IN'),
 ('30125',1.45, 'IN'),
-('30126',6.70, 'IN’);
-
-insert into pprice values ('30127', 'IL', 3.99);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+('30126',6.70, 'IN’),
+('30127',3.99, 'IL'),
 ('30041', 3.89,'IN'),
 ('30042', 4.59,'IN'),
 ('30043', 20.19,'IN'),
@@ -420,15 +393,14 @@ insert into pprice values ('30127', 'IL', 3.99);
 ('30126',6.75, 'IL'),
 ('30127',3.59, 'IN')
 ;
-
+--supplier
 insert into supplier values('50001','John’,’Smith','200 South king drive','chicago','IL','60616'),
 ('50002','Michael','Johnson','102 Albion place','Rockport','IL','62370'),
 ('50003','David','Martinez','390 Matthews Street','Sterling','IL','61081'),
 ('50004','Robert','James','4442 Birch Street','Greenwood','IN','46142'),
 ('50005','James','Wade','3571 Sand Fork Road','Millersburg','IN','46543');
 
-
-
+--sells
 insert into sells values('50001','30001','5.00'),
 ('50002','30001','4.85'),
 ('50003','30002','6.29'),
@@ -440,11 +412,7 @@ insert into sells values('50001','30001','5.00'),
 ('50005','30005','2.19'),
 ('50004','30005','2.11');
 
-
-
-
-
-
+--warehouse
 insert into warehouse values 
 ('IL001','4305 Fraggle Drive', 'Chicago','IL','60622', 23000.89),
 ('IL002','1464 Memory Lane','Peoria','IL','61611', 443459.56), 
@@ -453,7 +421,7 @@ insert into warehouse values
 ('IN002','1763 Raintree Boulevard','Richmond','IN','47374',351123.51);
 
 
-
+--stock
 insert into stock values('30001','IL001',2511),
 ('30001','IN001',1021),
 ('30002','IL002',3112),
@@ -465,18 +433,7 @@ insert into stock values('30001','IL001',2511),
 ('30005','IL001',322),
 ('30005','IN002',251);
 
-
-
-
-
-
-
-
-
-
-
-
-
+--customer and staff data
 insert into customer values ('10001', 'Joe', 'Elston', 0.0);
 
 insert into staff values ('20001', 'Mary', 'Jones', '3922 Matthews Street', 'Grand Detour', 'IN', '46304', 4300, 'sales');
